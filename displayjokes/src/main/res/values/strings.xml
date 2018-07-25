@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DisplayJokes</string>
+    <!-- Intent extras -->
+    <string name="joke_intent_extra" translatable="false">joke_intent_extra</string>
+</resources>
