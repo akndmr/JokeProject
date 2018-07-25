@@ -1,21 +1,21 @@
 Warning: Google App Engine Java 7 runtime is deprecated.
 Warning: See https://cloud.google.com/appengine/docs/deprecations/java7
-Tem 25, 2018 3:14:59 AM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
+Tem 25, 2018 8:42:46 PM com.google.appengine.tools.development.SystemPropertiesManager setSystemProperties
 INFO: Overwriting system property key 'java.util.logging.config.file', value 'C:\Users\AKIN\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine\google\appengine\tools\java\config\sdk\logging.properties' with value 'WEB-INF/logging.properties' from 'C:\Users\AKIN\Desktop\Android_Projeler\UdacityP2\ud867-gradle\FinalProject\backend\build\exploded-backend\WEB-INF\appengine-web.xml'
-Tem 25, 2018 3:14:59 AM com.google.apphosting.utils.jetty.JettyLogger info
+Tem 25, 2018 8:42:46 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFO: Logging to JettyLogger(null) via com.google.apphosting.utils.jetty.JettyLogger
-Tem 25, 2018 12:14:59 AM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
+Tem 25, 2018 5:42:47 PM com.google.appengine.tools.development.IsolatedAppClassLoader checkWorkingDirectory
 WARNING: Your working directory, (C:\Users\AKIN\Desktop\Android_Projeler\UdacityP2\ud867-gradle\FinalProject\backend) is not equal to your 
 web application root (C:\Users\AKIN\Desktop\Android_Projeler\UdacityP2\ud867-gradle\FinalProject\backend\build\exploded-backend)
 You will not be able to access files from your working directory on the production server.
 
-Tem 25, 2018 12:14:59 AM com.google.apphosting.utils.jetty.JettyLogger info
+Tem 25, 2018 5:42:48 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFO: jetty-6.1.x
-Tem 25, 2018 12:15:01 AM com.google.apphosting.utils.jetty.JettyLogger info
+Tem 25, 2018 5:42:50 PM com.google.apphosting.utils.jetty.JettyLogger info
 INFO: Started SelectChannelConnector@localhost:8080
-Tem 25, 2018 12:15:01 AM com.google.appengine.tools.development.AbstractModule startup
+Tem 25, 2018 5:42:50 PM com.google.appengine.tools.development.AbstractModule startup
 INFO: Module instance default is running at http://localhost:8080/
-Tem 25, 2018 12:15:01 AM com.google.appengine.tools.development.AbstractModule startup
+Tem 25, 2018 5:42:50 PM com.google.appengine.tools.development.AbstractModule startup
 INFO: The admin console is running at http://localhost:8080/_ah/admin
-Tem 25, 2018 3:15:01 AM com.google.appengine.tools.development.DevAppServerImpl doStart
+Tem 25, 2018 8:42:50 PM com.google.appengine.tools.development.DevAppServerImpl doStart
 INFO: Dev App Server is now running

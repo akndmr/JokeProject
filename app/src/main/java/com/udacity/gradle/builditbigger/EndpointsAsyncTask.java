@@ -21,7 +21,18 @@ import io.github.akndmr.displayjokes.DisplayJokeActivity;
  */
 class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
-    private Context context;
+    private Context mContext;
+    private EndpointsTaskListener mListener = null;
+    private Exception mError = null;
+
+    public static interface EndpointsTaskListener {
+        public void onDone(String result, Exception e);
+    }
+
+    public EndpointsAsyncTask setListener(EndpointsTaskListener listener) {
+        mListener = listener;
+        return this;
+    }
 
     @Override
     protected String doInBackground(Context... params) {
@@ -43,19 +54,27 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
             myApiService = builder.build();
         }
 
-        context = params[0];
+        mContext = params[0];
 
         try {
             return myApiService.sayJoke().execute().getData();
         } catch (IOException e) {
+            mError = e;
             return e.getMessage();
         }
     }
 
     @Override
     protected void onPostExecute(String result) {
-        Intent intent = new Intent(context, DisplayJokeActivity.class);
-        intent.putExtra(context.getResources().getString(R.string.joke_intent_extra),result);
-        context.startActivity(intent);
+        if (this.mListener != null)
+            this.mListener.onDone(result, mError);
+    }
+
+    @Override
+    protected void onCancelled() {
+        if (this.mListener != null) {
+            mError = new InterruptedException("AsyncTask cancelled");
+            this.mListener.onDone(null, mError);
+        }
     }
 }

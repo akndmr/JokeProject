@@ -10,8 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.udacity.gradle.builditbigger.utils.ConstantsUtil;
-
 import io.github.akndmr.displayjokes.DisplayJokeActivity;
 import io.github.akndmr.javajokeprovider.JokeProvider;
 
@@ -49,7 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void tellJoke(View view) {
-        new EndpointsAsyncTask().execute(MainActivity.this);
+        new EndpointsAsyncTask().setListener(new EndpointsAsyncTask.EndpointsTaskListener() {
+            @Override
+            public void onDone(String result, Exception e) {
+                Intent intent = new Intent(MainActivity.this, DisplayJokeActivity.class);
+                intent.putExtra(getResources().getString(R.string.joke_intent_extra),result);
+                startActivity(intent);
+            }
+        }).execute(this);
     }
 
 
